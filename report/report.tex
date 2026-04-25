@@ -1,0 +1,85 @@
+\documentclass{tudelft-report}
+
+%% Set up the bibliography
+\usepackage{biblatex}
+\addbibresource{report.bib}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+\usepackage{placeins}
+
+%% Additional packages and commands
+\usepackage{parskip}
+\setlist{itemsep=-2pt} % Reducing white space in lists slightly
+\renewcommand{\deg}{\si{\degree}\xspace} % Use \deg easily, everywhere
+
+%% ----------------------------------------------------------------------
+%%    Begin of document + Frontmatter (Roman page numbering)
+%% ----------------------------------------------------------------------
+
+
+\newcommand{\Tx}{$\text{T}_\text{X}$ }
+\newcommand{\Rx}{$\text{R}_\text{X}$ }
+
+\begin{document}
+
+\frontmatter
+
+%% Define the main parameters
+\title{SIMO Antenna Array}
+\subtitle{MATLAB Implementation}
+\author{Islam Tarek Moawad Eid}
+
+\subject{ELC2407: Digital Communications} % Cover only
+\affiliation{Capital University} % Cover only
+\coverimage{figures/cover.jpg} % Aspect ratio of 2:3 (portrait) recommended
+\definecolor{title}{HTML}{4884d6} % Color for cover title
+
+\makecover
+
+\input{frontmatter/title-report}
+%\input{frontmatter/preface}
+\input{frontmatter/summary}
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\input{frontmatter/nomenclature}
+
+%% ----------------------------------------------------------------------
+%%    Mainmatter (Arabic page numbering)
+%% ----------------------------------------------------------------------
+
+\mainmatter
+
+\input{mainmatter/introduction}
+\input{mainmatter/chapter-2}
+\input{mainmatter/chapter-3}
+\input{mainmatter/chapter-4}
+\input{mainmatter/chapter-5}
+\input{mainmatter/chapter-6}
+\input{mainmatter/chapter-7}
+\input{mainmatter/chapter-8}
+\input{mainmatter/chapter-9}
+
+%\input{mainmatter/conclusion}
+
+%% Prevent urls running into margins in bibliography
+\setcounter{biburlnumpenalty}{7000}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{7000}
+
+%% Add bibliography
+\printbibliography[heading=bibintoc,title=References]
+
+%% ----------------------------------------------------------------------
+%%    Appendix (Letters for chapters)
+%% ----------------------------------------------------------------------
+
+\appendix
+
+\input{appendix/appendix-a}
+%\input{appendix/appendix-b}
+%\input{appendix/appendix-c} % Create file to add
+
+\end{document}
